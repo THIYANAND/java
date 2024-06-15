@@ -1,0 +1,39 @@
+package mco;
+class ABC
+{
+    int a,b;
+    ABC(int x, int y)
+    {
+        a=x;
+        b=y;
+        System.out.println("First version of Constructor is called");
+        System.out.println("values of a and b are\t"+a+"\t"+b);
+    }
+
+    ABC(int x)
+    {
+        a=x;
+        b=10;
+        System.out.println("Second version of Constructor is called");
+        System.out.println("values of a and b are\t" +a+"\t"+b);
+    }
+    void meth()
+    {
+        System.out.println("First version of method is called");
+    }
+    void meth(int x)
+    {
+        System.out.println("Second version of method is called");
+    }
+                
+}
+public class Mco 
+{
+    public static void main(String[] args) 
+    {
+        ABC ob1 = new ABC(20,20);
+        ABC ob2 = new ABC(20);
+        ob1.meth();
+        ob1.meth(40);
+    }    
+}
