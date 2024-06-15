@@ -1,0 +1,29 @@
+package excdemo;
+import java.util.Scanner;
+public class Excdemo 
+{
+    public static void main(String[] args) 
+    {
+       int a, b, result;
+       Scanner S = new Scanner(System.in);
+       System.out.println("Enter the value of A and B");
+       
+       a=S.nextInt();
+       b=S.nextInt();
+       
+       try{
+           result=a/b;
+           int c[]={1};
+           c[40]=99;
+       }
+       catch (ArithmeticException e)
+       {
+           System.out.println("Divide by 0:"+e);
+       }
+       catch(ArrayIndexOutOfBoundsException e)
+       {
+           System.out.println("ArrayIndexOutOfBoundsException: "+e);
+       }
+       System.out.println("After Cry/Catch Blocks");
+    }
+}
