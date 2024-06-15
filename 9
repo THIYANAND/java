@@ -1,0 +1,72 @@
+  package P1;
+
+public class A 
+{
+    protected int a;
+    public void displayA()
+    {
+        System.out.println("Class A");
+    }
+}
+
+  package P1;
+public class B extends A
+{
+    public void displayB()
+    {
+        a=10;
+        System.out.println("Class B:"+"The Value of a is"+a);
+    }
+}
+
+
+package P1;
+public class C 
+{
+    void displayC()
+    {
+        System.out.println("Class C");
+    }
+}
+
+
+package P2;
+import P1.*;
+public class D extends A
+{
+    public void displayD()
+    {
+        a=100;
+        System.out.println("Class D:"+"The Value of a is"+a);
+    }
+}
+
+
+package P2;
+public class E 
+{
+    private void displayE()
+    {
+        System.out.println("Class E");
+    }
+}
+
+package packagesdemo;
+import P1.*;
+import P2.*;
+public class Packagesdemo 
+{
+    public static void main(String[] args) 
+    {
+        B b=new B();
+        C c=new C();
+        D d=new D();
+        E e=new E();
+        b.displayA();
+        b.displayB();
+        // error c.displayC(); 
+        d.displayD();
+        // error e.displayE();
+    }
+ 
+}
