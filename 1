@@ -1,7 +1,46 @@
-public class hi
+
+package quadratic;
+
+import java.util.Scanner;
+
+public class Quadratic 
 {
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
-        System.out.println("hi");
+        double root1,root2,a,b,c,determinant,r;
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Input a: ");
+        a=input.nextDouble();
+        System.out.print("Input b: ");
+        b = input.nextDouble();
+        System.out.print("Input c: ");
+        c = input.nextDouble();
+        
+        determinant = b*b-4*a*c;
+        r=Math.sqrt(determinant);
+        
+        if(determinant>0)
+        {
+            root1=(-b+r)/(2*a);
+            root2=(-b-r)/(2*a);
+            System.out.format("root1=%.2f and root2=%.2f \n",root1,root2);
         }
+        else if(determinant==0)
+        {
+            root1=root2=(-b)/(2*a);
+            System.out.format("Roots are equal \n");
+            System.out.format("root1=root2=%.2f\n;",root1);
         }
+        else
+        {
+            //root are complex number and distinct
+            double real=-b/(2*a);
+            double imaginary=Math.sqrt(-determinant)/(2*a);
+            System.out.format("Root are imaginary \n");
+            System.out.format("\n root1=%.2f+%.2fi\n",real,imaginary);
+            System.out.format("\n root2=%.2f-%.2fi\n",real,imaginary);
+        }
+    }
+    
+}
